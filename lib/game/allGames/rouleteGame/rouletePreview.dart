@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/game/allGames/widgets/plus_minus_buttons.dart';
 import 'package:flutter_application_1/game/dataParams/constants.dart';
-import 'package:flutter_application_1/main.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -497,7 +496,6 @@ class TriangleIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Transform.rotate(
       angle: _math.pi,
       child: SizedBox(

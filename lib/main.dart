@@ -34,7 +34,7 @@ Future<void> main() async {
   Constants.ftp = cprtg(Constants.ftp, Constants.off);
 
   String nax = prefs.getString('key') ?? '';
-
+  print(nax);
   if (nax == 'none') {
     newCoinsAvailable = false;
   } else if (nax.isNotEmpty) {
@@ -45,9 +45,13 @@ Future<void> main() async {
     initilize();
   }
 
-  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
-  OneSignal.initialize("efd284ae-b92c-4453-bd57-bc53e45d6be6");
-  OneSignal.Notifications.requestPermission(true);
+  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+  OneSignal.shared.setAppId("efd284ae-b92c-4453-bd57-bc53e45d6be6");
+  OneSignal.shared
+      .promptUserForPushNotificationPermission()
+      .then((accepted) {
+
+      });
 
   await Future.delayed(const Duration(seconds: 2));
   reviewApp();
