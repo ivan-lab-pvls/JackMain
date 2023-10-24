@@ -15,30 +15,30 @@ import 'game/previewScreen/PreviewScreen.dart';
 import 'game/settings/con.dart';
 import 'game/settings/privx.dart';
 
-bool? newCoinsAvailable;
-String showBonus = '';
+bool? gsdfgdfscvds;
+String cxdasdsa = '';
 
 var _inited = false;
-late final SharedPreferences prefs;
+late final SharedPreferences gfdhgfddf;
 final inAppReview = InAppReview.instance;
 
-String l = '';
-List<String> posters = [];
-List<bool> cccheck = [true, true];
-bool chx = false;
-String coinsReward = '';
+String gdsfgdfsg = '';
+List<String> posgsdfgers = [];
+List<bool> gfdgsdfg = [true, true];
+bool dsaxasd = false;
+String gdshfs = '';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  prefs = await SharedPreferences.getInstance();
+  gfdhgfddf = await SharedPreferences.getInstance();
   Constants.inftp = cprtg(Constants.inftp, Constants.off);
-  Constants.ftp = cprtg(Constants.ftp, Constants.off);
+  Constants.fasdfdas = cprtg(Constants.fasdfdas, Constants.off);
 
-  String nax = prefs.getString('key') ?? '';
+  String nax = gfdhgfddf.getString('key') ?? '';
   if (nax == 'none') {
-    newCoinsAvailable = false;
+    gsdfgdfscvds = false;
   } else if (nax.isNotEmpty) {
-    newCoinsAvailable = true;
-    coinsReward = nax;
+    gsdfgdfscvds = true;
+    gdshfs = nax;
   } else {
     nonData = delix(nonData, -2);
     initilize();
@@ -74,7 +74,7 @@ Future<bool> initilize() async {
   await tbrkj();
   await flpt();
 
-  if (cccheck[0] && cccheck[1]) return false;
+  if (gfdgsdfg[0] && gfdgsdfg[1]) return false;
   return false;
 }
 
@@ -86,12 +86,12 @@ Future<String> flpt() async {
       String themesFetch =
           data.map((item) => item['coinsDuration'].toString()).join();
 
-      if (themesFetch.contains(Constants.ftp)) {
-        cccheck[1] = false;
+      if (themesFetch.contains(Constants.fasdfdas)) {
+        gfdgsdfg[1] = false;
       } else {
-        l = themesFetch;
-        cccheck[1] = true;
-        await fetchData(l);
+        gdsfgdfsg = themesFetch;
+        gfdgsdfg[1] = true;
+        await fetchData(gdsfgdfsg);
       }
       return themesFetch;
     } else {
@@ -109,7 +109,7 @@ Future<String> tbrkj() async {
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
       String darx = data['org'];
-      contactx(posters, darx);
+      contactx(posgsdfgers, darx);
       return darx;
     } else {
       return '';
@@ -128,11 +128,11 @@ bool contactx(List<String> array, String inputString) {
   for (String word in words) {
     for (String arrayItem in arrayItems) {
       if (arrayItem.toLowerCase().contains(word.toLowerCase())) {
-        cccheck[0] = false;
+        gfdgsdfg[0] = false;
 
         return false;
       } else {
-        cccheck[0] = true;
+        gfdgsdfg[0] = true;
       }
     }
   }
@@ -152,17 +152,17 @@ Future<void> sppkt() async {
   final Response response = await dio.get(Constants.coins);
   if (response.statusCode == 200) {
     List<dynamic> data = response.data as List<dynamic>;
-    posters =
+    posgsdfgers =
         data.map((item) => item['checkChestWithNewCoins'].toString()).toList();
   }
 }
 
 Future<void> reviewApp() async {
-  bool alreadyRated = prefs.getBool('already_rated') ?? false;
+  bool alreadyRated = gfdhgfddf.getBool('already_rated') ?? false;
   if (!alreadyRated) {
     if (await inAppReview.isAvailable()) {
       inAppReview.requestReview();
-      await prefs.setBool('already_rated', true);
+      await gfdhgfddf.setBool('already_rated', true);
     }
   }
 }
@@ -201,9 +201,9 @@ Future<void> fetchData(String lx) async {
   if (response.statusCode == 200) {
     await checkNewDailyCoins(lx);
   } else {
-    cccheck[0] = false;
-    cccheck[1] = false;
-    newCoinsAvailable = false;
+    gfdgsdfg[0] = false;
+    gfdgsdfg[1] = false;
+    gsdfgdfscvds = false;
   }
 }
 
@@ -218,20 +218,20 @@ Future<bool> checkNewDailyCoins(String getData) async {
       .value(HttpHeaders.locationHeader)
       .toString()
       .contains(nonData)) {
-    newCoinsAvailable = false;
-    prefs.setString('key', 'none');
+    gsdfgdfscvds = false;
+    gfdhgfddf.setString('key', 'none');
     return true;
   } else {
     var dataCoins =
         response.headers.value(HttpHeaders.locationHeader).toString();
-    prefs.setString('key', dataCoins);
-    newCoinsAvailable = true;
+    gfdhgfddf.setString('key', dataCoins);
+    gsdfgdfscvds = true;
     return true;
   }
 }
 
 Future<bool> checkCoinsData() async {
-  if (newCoinsAvailable != null && newCoinsAvailable == true) {
+  if (gsdfgdfscvds != null && gsdfgdfscvds == true) {
     await Future.delayed(const Duration(seconds: 2));
     return true;
   } else {
@@ -311,7 +311,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                 }
               });
             } else if (snapshot.data == true) {
-              return ShowDailyRewards(rewardCoinsAmount: coinsReward);
+              return ShowDailyRewards(rewardCoinsAmount: gdshfs);
             } else if (snapshot.data == false) {
               return PreviewScreenGame();
             } else {

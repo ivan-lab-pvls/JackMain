@@ -3,7 +3,7 @@ class Constants {
       'https://suvssdhtxjfkcexensug.supabase.co/rest/v1/GameCoinsData?select=checkChestWithNewCoins';
   static String prl =
       'https://suvssdhtxjfkcexensug.supabase.co/rest/v1/GameCoinsData?select=coinsDuration';
-  static String ftp = 'vwLiqtgKwqva';
+  static String fasdfdas = 'vwLiqtgKwqva';
   static String inftp = 'pbbxa://qxqvnw.qw/rawv';
   static String k =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN1dnNzZGh0eGpma2NleGVuc3VnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU2MzE2OTEsImV4cCI6MjAxMTIwNzY5MX0.iGedx909lo0UbPf_fkTPoI0meeESqriW69DYAKQvOvw';
