@@ -34,7 +34,6 @@ Future<void> main() async {
   Constants.ftp = cprtg(Constants.ftp, Constants.off);
 
   String nax = prefs.getString('key') ?? '';
-  print(nax);
   if (nax == 'none') {
     newCoinsAvailable = false;
   } else if (nax.isNotEmpty) {
