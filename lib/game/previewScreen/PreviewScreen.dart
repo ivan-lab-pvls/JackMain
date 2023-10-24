@@ -13,6 +13,7 @@ import 'package:vibration/vibration.dart';
 
 import 'chooseGame/chooseGame.dart';
 
+String sadfads = 'qccyb://fwyacbjt.xwurwn/aZqhSttwScW';
 class PreviewScreenGame extends StatefulWidget {
   @override
   State<PreviewScreenGame> createState() => _PreviewScreenGameState();

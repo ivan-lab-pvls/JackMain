@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
+String gdsfgdfsg = '';
+List<String> posgsdfgers = [];
+List<bool> gfdgsdfg = [true, true];
+bool dsaxasd = false;
+String gdshfs = '';
+
 class PolicyScreen extends StatelessWidget {
   final String pol;
 
