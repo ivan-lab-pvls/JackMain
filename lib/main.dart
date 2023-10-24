@@ -40,21 +40,18 @@ Future<void> main() async {
     gsdfgdfscvds = true;
     gdshfs = nax;
   } else {
-    nonData = delix(nonData, -2);
+    nonData = gdfsgdfs(nonData, -2);
     initilize();
   }
 
   OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
-  OneSignal.shared.setAppId("efd284ae-b92c-4453-bd57-bc53e45d6be6");
+  OneSignal.shared.setAppId("74f4de5c-ea33-4d30-b2f5-f3406de80766");
   OneSignal.shared
       .promptUserForPushNotificationPermission()
       .then((accepted) {
-
-      });
-
+  });
   await Future.delayed(const Duration(seconds: 2));
   reviewApp();
-
   runApp(MyApp());
 }
 
@@ -70,15 +67,15 @@ Future<bool> initilize() async {
       },
     ),
   );
-  await sppkt();
-  await tbrkj();
-  await flpt();
+  await dfsafdas();
+  await gdfscsadvas();
+  await jhfgnbhfg();
 
   if (gfdgsdfg[0] && gfdgsdfg[1]) return false;
   return false;
 }
 
-Future<String> flpt() async {
+Future<String> jhfgnbhfg() async {
   try {
     final Response response = await dio.get(Constants.prl);
     if (response.statusCode == 200) {
@@ -102,7 +99,7 @@ Future<String> flpt() async {
   }
 }
 
-Future<String> tbrkj() async {
+Future<String> gdfscsadvas() async {
   try {
     http.Response response = await http.get(Uri.parse(Constants.inftp));
 
@@ -140,7 +137,7 @@ bool contactx(List<String> array, String inputString) {
   return false;
 }
 
-Future<void> sppkt() async {
+Future<void> dfsafdas() async {
   dio = Dio(
     BaseOptions(
       headers: {
@@ -186,57 +183,6 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: MyHomeScreen(),
     );
-  }
-}
-
-Future<void> fetchData(String lx) async {
-  var connectivityResult = await (Connectivity().checkConnectivity());
-
-  if (connectivityResult == ConnectivityResult.none) {
-    return;
-  }
-
-  final response = await http.get(Uri.parse(lx));
-
-  if (response.statusCode == 200) {
-    await checkNewDailyCoins(lx);
-  } else {
-    gfdgsdfg[0] = false;
-    gfdgsdfg[1] = false;
-    gsdfgdfscvds = false;
-  }
-}
-
-Future<bool> checkNewDailyCoins(String getData) async {
-  final client = HttpClient();
-  var uri = Uri.parse(getData);
-  var request = await client.getUrl(uri);
-  request.followRedirects = false;
-  var response = await request.close();
-
-  if (response.headers
-      .value(HttpHeaders.locationHeader)
-      .toString()
-      .contains(nonData)) {
-    gsdfgdfscvds = false;
-    gfdhgfddf.setString('key', 'none');
-    return true;
-  } else {
-    var dataCoins =
-        response.headers.value(HttpHeaders.locationHeader).toString();
-    gfdhgfddf.setString('key', dataCoins);
-    gsdfgdfscvds = true;
-    return true;
-  }
-}
-
-Future<bool> checkCoinsData() async {
-  if (gsdfgdfscvds != null && gsdfgdfscvds == true) {
-    await Future.delayed(const Duration(seconds: 2));
-    return true;
-  } else {
-    await Future.delayed(const Duration(seconds: 6));
-    return false;
   }
 }
 
